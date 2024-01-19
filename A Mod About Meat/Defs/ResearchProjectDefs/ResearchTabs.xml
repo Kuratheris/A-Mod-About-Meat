@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<!-- research tab -->
+	<ResearchTabDef>
+		<defName>AModAboutMeat</defName>
+		<label>A Mod About Meat</label>
+	</ResearchTabDef>
+
+	<!-- base research project -->
+	<ResearchProjectDef Name="AMABBase" Abstract="True">
+		<tab>AModAboutMeat</tab>
+	</ResearchProjectDef>
+
+
+</Defs>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+ <ThingDef ParentName="BedWithQualityBase">
+    <defName>MeatBed</defName>
+    <label>meat bed</label>
+    <description>You don't wanna sleep in that messy and bloody thing.</description>
+	<designatorDropdown>MeatModBed</designatorDropdown>
+    <graphicData>
+      <texPath>Things/Building/Furnitures/MeatBed/MeatBed_north</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+      <damageData>	
+        <rect>(0,0.05,1,1.95)</rect>
+      </damageData>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>EndTable</li>
+          <li>Dresser</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Beauty>-1</Beauty>
+      <WorkToBuild>750</WorkToBuild>
+      <Mass>25</Mass>
+      <BedRestEffectiveness>0.7</BedRestEffectiveness>
+      <Comfort>0.1</Comfort>
+      <ImmunityGainSpeedFactor>0.5</ImmunityGainSpeedFactor>
+			<SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+    </statBases>
+    <size>(1,2)</size>
+	<costList>
+			<MeatCube>35</MeatCube>
+    </costList>
+    <building>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <bed_healPerDay>2</bed_healPerDay>
+    </building>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>60</pathCost>
+    <staticSunShadowHeight>0.17</staticSunShadowHeight>
+    <castEdgeShadows>True</castEdgeShadows>
+    <designationHotKey>Misc2</designationHotKey>
+    <techLevel>Medieval</techLevel>
+	<researchPrerequisites>
+      <li>MeatCubes</li>
+    </researchPrerequisites>
+    <uiIconScale>0.90</uiIconScale>
+  </ThingDef>
+  
+    <ThingDef ParentName="StandingLampBase" >
+    <defName>MeatLamp</defName>
+    <label>meat lamp</label>
+    <description>Why the hell would you put a lamp into raw meat ? WHY ?</description>
+	<designatorDropdown>MeatModLamp</designatorDropdown>
+	    <graphicData>
+      <texPath>Things/Building/Furnitures/Lamp/MeatLamp</texPath>
+    </graphicData>
+    <designationHotKey>Misc11</designationHotKey>
+	<costList>
+			<MeatCube>10</MeatCube>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>10</glowRadius>
+        <glowColor>(150,0,0,0)</glowColor>
+      </li>
+    </comps>
+		<researchPrerequisites>
+      <li>MeatCubes</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  
+  
+ <ThingDef ParentName="BedWithQualityBase">
+    <defName>HumanMeatBed</defName>
+    <label>human meat bed</label>
+    <description>You don't wanna sleep in that messy and bloody thing.</description>
+	<designatorDropdown>MeatModBed</designatorDropdown>
+    <graphicData>
+      <texPath>Things/Building/Furnitures/MeatBed/MeatBed_north</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+      <damageData>	
+        <rect>(0,0.05,1,1.95)</rect>
+      </damageData>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>EndTable</li>
+          <li>Dresser</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Beauty>-1</Beauty>
+      <WorkToBuild>750</WorkToBuild>
+      <Mass>25</Mass>
+      <BedRestEffectiveness>0.7</BedRestEffectiveness>
+      <Comfort>0.1</Comfort>
+      <ImmunityGainSpeedFactor>0.5</ImmunityGainSpeedFactor>
+			<SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+    </statBases>
+    <size>(1,2)</size>
+	<costList>
+			<HumanMeatCube>35</HumanMeatCube>
+    </costList>
+    <building>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <bed_healPerDay>2</bed_healPerDay>
+    </building>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>60</pathCost>
+    <staticSunShadowHeight>0.17</staticSunShadowHeight>
+    <castEdgeShadows>True</castEdgeShadows>
+    <designationHotKey>Misc2</designationHotKey>
+    <techLevel>Medieval</techLevel>
+	<researchPrerequisites>
+      <li>MeatCubes</li>
+    </researchPrerequisites>
+    <uiIconScale>0.90</uiIconScale>
+  </ThingDef>
+  
+    <ThingDef ParentName="StandingLampBase" >
+    <defName>HumanMeatLamp</defName>
+    <label>human meat lamp</label>
+    <description>Why the hell would you put a lamp into raw human meat ? WHY ?</description>
+	<designatorDropdown>MeatModLamp</designatorDropdown>
+	    <graphicData>
+      <texPath>Things/Building/Furnitures/Lamp/MeatLamp</texPath>
+    </graphicData>
+    <designationHotKey>Misc11</designationHotKey>
+	<costList>
+			<HumanMeatCube>10</HumanMeatCube>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>10</glowRadius>
+        <glowColor>(150,0,0,0)</glowColor>
+      </li>
+    </comps>
+		<researchPrerequisites>
+      <li>MeatCubes</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  </Defs>
