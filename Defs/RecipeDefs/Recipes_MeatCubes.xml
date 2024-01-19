@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef>
+		<defName>CubizeMeat</defName>
+		<label>Butcher meat cubes</label>
+		<description>Carve raw meat into bloody, more useful cubes of meat.</description>
+		<jobString>Carving meat</jobString>
+		<workAmount>150</workAmount>
+		<workSpeedStat>ButcheryFleshSpeed</workSpeedStat>
+		<workSkill>Cooking</workSkill>
+			<workSkillLearnFactor>0.75</workSkillLearnFactor>
+			<efficiencyStat>ButcheryFleshEfficiency</efficiencyStat>
+		<effectWorking>ButcherFlesh</effectWorking>
+		<soundWorking>Recipe_ButcherCorpseFlesh</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<targetCountAdjustment>1</targetCountAdjustment>
+		<recipeUsers>
+			<li>TableButcher</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>MeatRaw</li>
+					</categories>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+
+		<fixedIngredientFilter>
+      <categories>
+        <li>MeatRaw</li>
+      </categories>
+			<disallowedCategories>
+				<li>EggsFertilized</li>
+			</disallowedCategories>
+			<disallowedThingDefs>
+				<li>Meat_Human</li>
+				<li>Meat_Megaspider</li>
+				<li>InsectJelly</li>
+				<li>MeatCube</li>
+				<li>HumanMeatCube</li>
+			</disallowedThingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<MeatCube>10</MeatCube>
+		</products>
+		<skillRequirements>
+				<Cooking>3</Cooking>
+		</skillRequirements>
+		<researchPrerequisite>MeatCubes</researchPrerequisite>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>CubizeHumanMeat</defName>
+		<label>Butcher human meat cubes</label>
+		<description>Carve raw human meat into bloody, more useful cubes of meat.</description>
+		<jobString>Carving human meat</jobString>
+		<workAmount>150</workAmount>
+		<workSpeedStat>ButcheryFleshSpeed</workSpeedStat>
+		<workSkill>Cooking</workSkill>
+			<workSkillLearnFactor>0.75</workSkillLearnFactor>
+			<efficiencyStat>ButcheryFleshEfficiency</efficiencyStat>
+		<effectWorking>ButcherFlesh</effectWorking>
+		<soundWorking>Recipe_ButcherCorpseFlesh</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<targetCountAdjustment>1</targetCountAdjustment>
+		<recipeUsers>
+			<li>TableButcher</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Meat_Human</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Meat_Human</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<HumanMeatCube>10</HumanMeatCube>
+		</products>
+		<skillRequirements>
+				<Cooking>3</Cooking>
+		</skillRequirements>
+		<researchPrerequisite>MeatCubes</researchPrerequisite>
+	</RecipeDef>
+</Defs>

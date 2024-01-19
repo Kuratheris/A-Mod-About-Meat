@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<TerrainDef ParentName="NaturalTerrainBase">
+		<defName>Fleshfloor</defName>
+		<label>raw flesh floor</label>
+		<description>Raw bloody meat. Smelly, sticky, ugly, but can work as a fertilizer somehow, and plant can grow at slower speed on that thing.</description>
+		<texturePath>Things/Building/Floors/Fleshflooring</texturePath>
+		<designatorDropdown>MeatModFloor</designatorDropdown>
+		<edgeType>FadeRough</edgeType>
+		<pathCost>10</pathCost>
+		<statBases>
+			<Beauty>-3</Beauty>
+			<WorkToBuild>150</WorkToBuild>
+		</statBases>
+		<affordances>
+			<li>Light</li>
+			<li>Medium</li>
+			<li>Heavy</li>
+			<li>Diggable</li>
+			<li>GrowSoil</li>
+		</affordances>
+		<costList>
+			<MeatCube>3</MeatCube>
+		</costList>
+		<fertility>0.7</fertility>
+		<renderPrecedence>340</renderPrecedence>
+		<designationCategory>Floors</designationCategory>
+		<constructEffect>ConstructDirt</constructEffect>
+        <generatedFilth>Filth_Dirt</generatedFilth>
+		<takeFootprints>True</takeFootprints>
+	<researchPrerequisites>
+      <li>MeatCubes</li>
+    </researchPrerequisites>
+	</TerrainDef>
+	
+	<TerrainDef ParentName="FloorBase">
+    <defName>MeatTiles</defName>
+    <label>meat tiles</label>
+    <renderPrecedence>245</renderPrecedence>
+    <description>Meat Tiles in a brick pattern. Well, you just managed to make a not too bad-looking meat floor. Still sticky tho.</description>
+    <texturePath>Things/Building/Floors/rawf</texturePath>
+	<designatorDropdown>MeatModFloor</designatorDropdown>
+    <statBases>
+      <Beauty>0</Beauty>
+      <WorkToBuild>250</WorkToBuild>
+    </statBases>
+		<costList>
+			<MeatCube>10</MeatCube>
+		</costList>
+    <constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+      <li>MeatHardening</li>
+    </researchPrerequisites>
+  </TerrainDef>
+
+</Defs>
