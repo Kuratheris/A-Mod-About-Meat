@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Moyo-From the depth</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs</xpath>
+<value>
+  <StuffCategoryDef>
+    <defName>MoyoMeat</defName>
+    <label>moyo meat</label>
+  </StuffCategoryDef> 
+
+
+   <ThingDef ParentName="OrganicProductBase" Name="MoyoMeatCubeBase">
+    <defName>MoyoMeatCube</defName>
+    <label>cubes of moyo meat</label>
+    <description>Cube-carved moyo meat to make all sort of things.</description>
+    <graphicData>
+      <texPath>Things/Items/MoyoMeatCubes</texPath>
+	  <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<thingCategories>
+      <li>MeatRaw</li>
+    </thingCategories>
+    <statBases>
+      <MarketValue>1.1</MarketValue>
+	  <Flammability>1</Flammability>
+      <DeteriorationRate>6</DeteriorationRate>
+	  <Mass>0.03</Mass>
+	  <Nutrition>0.05</Nutrition>
+    </statBases>
+    <stuffProps>
+      <stuffAdjective>moyo meat</stuffAdjective>
+      <categories>
+        <li>MoyoMeat</li>
+      </categories>
+      <commonality>1.00</commonality>
+      <color>(0,0,255)</color>
+      <constructEffect>ConstructMetal</constructEffect>
+      <soundImpactStuff>BulletImpact_Wood</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Wood</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Wood</soundMeleeHitBlunt>
+      <statFactors>
+        <MaxHitPoints>0.65</MaxHitPoints>
+        <Beauty>-1</Beauty>
+        <WorkToMake>0.7</WorkToMake>
+				<WorkToBuild>0.7</WorkToBuild>
+        <DoorOpenSpeed>0.5</DoorOpenSpeed>
+      </statFactors>
+    </stuffProps>
+	<ingestible>
+      <preferability>RawBad</preferability>
+	  <foodType>Meat</foodType>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>RawVegetable_Eat</ingestSound>
+	  <tasteThought>AteHumanlikeMeatDirect</tasteThought>
+    </ingestible>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <comps>
+			<li Class="CompProperties_FoodPoisonable" />
+			<li Class="CompProperties_Ingredients" />
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>2</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+    </comps>
+  </ThingDef>
+  
+  
+	
+	<RecipeDef>
+		<defName>CubizeMoyoMeat</defName>
+		<label>Butcher moyo meat cubes</label>
+		<description>Carve raw moyo meat into bloody, more useful cubes of meat.</description>
+		<jobString>Carving moyo meat</jobString>
+		<workAmount>150</workAmount>
+		<workSpeedStat>ButcheryFleshSpeed</workSpeedStat>
+		<workSkill>Cooking</workSkill>
+			<workSkillLearnFactor>0.75</workSkillLearnFactor>
+			<efficiencyStat>ButcheryFleshEfficiency</efficiencyStat>
+		<effectWorking>ButcherFlesh</effectWorking>
+		<soundWorking>Recipe_ButcherCorpseFlesh</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<targetCountAdjustment>1</targetCountAdjustment>
+		<recipeUsers>
+			<li>TableButcher</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Meat_Alien_Moyo</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Meat_Alien_Moyo</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<MoyoMeatCube>10</MoyoMeatCube>
+		</products>
+		<skillRequirements>
+				<Cooking>3</Cooking>
+		</skillRequirements>
+		<researchPrerequisite>MeatCubes</researchPrerequisite>
+	</RecipeDef>
+	
+	
+	
+  <ThingDef ParentName="BuildingBase" Name="MoyoFleshWallBase">
+    <defName>MoyoFleshWall</defName>
+    <label>moyo flesh wall</label>
+    <description>A wall made of good bloody moyo meat. Capable of holding a roof.</description>
+    <category>Building</category>
+    <thingClass>Building</thingClass>
+	<designatorDropdown>MeatMod</designatorDropdown>
+    <graphicData>
+      <texPath>Things/Building/Moyo_Flesh_Wall</texPath>
+      <graphicClass>Graphic_Appearances</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags>
+        <li>Wall</li>
+        <li>Rock</li>
+      </linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop>
+        <edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft>
+        <edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Moyo_Flesh_Wall/FleshWall_Menu_Icon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <WorkToBuild>150</WorkToBuild>
+      <Flammability>1.0</Flammability>
+    </statBases>
+	<costList>
+			<MoyoMeatCube>10</MoyoMeatCube>
+	</costList>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <holdsRoof>true</holdsRoof>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+	<designationCategory>Structure</designationCategory>
+    <building>
+      <isInert>true</isInert>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>2</multiplier>
+      </li>
+    </damageMultipliers>
+    <designationHotKey>Misc3</designationHotKey>
+		<researchPrerequisites>
+      <li>MeatCubes</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  
+  
+  <ThingDef ParentName="BuildingBase" Name="MoyoMeatDoorBase" Abstract="True">
+    <thingClass>Building_Door</thingClass>
+    <category>Building</category>
+	<designatorDropdown>MeatModDoor</designatorDropdown>
+    <altitudeLayer>DoorMoveable</altitudeLayer>
+    <fillPercent>1</fillPercent>
+    <useHitPoints>true</useHitPoints>
+	<costList>
+			<MoyoMeatCube>25</MoyoMeatCube>
+	</costList>
+    <statBases>
+      <MaxHitPoints>160</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Structure</designationCategory>
+    <holdsRoof>true</holdsRoof>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <drawerType>RealtimeOnly</drawerType>
+    <building>
+			<isInert>true</isInert>
+			<canPlaceOverWall>true</canPlaceOverWall>
+      <soundDoorOpenPowered>Door_OpenPowered</soundDoorOpenPowered>
+      <soundDoorClosePowered>Door_ClosePowered</soundDoorClosePowered>
+      <soundDoorOpenManual>Door_OpenManual</soundDoorOpenManual>
+      <soundDoorCloseManual>Door_CloseManual</soundDoorCloseManual>
+      <blueprintClass>Blueprint_Door</blueprintClass>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Door/Door_Blueprint</texPath>
+      </blueprintGraphicData>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+		<placeWorkers>
+			<li>PlaceWorker_DoorLearnOpeningSpeed</li>
+		</placeWorkers>
+  </ThingDef>  
+
+    <ThingDef ParentName="MoyoMeatDoorBase">
+    <defName>MoyoMeatDoor</defName>
+    <label>moyo meat door</label>
+    <description>Divides rooms. The bloody moyo meat can kinda disgust your colonists, so they take longer to open.</description>
+    <statBases>
+      <WorkToBuild>300</WorkToBuild>
+	  <DoorOpenSpeed>0.50</DoorOpenSpeed>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/Moyo_Door/DoorMeat_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <!--  no damage marks because they don't move with the door
+        <rect>(0,0.12,1,0.76)</rect>-->
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Moyo_Door/DoorMeat_MenuIcon</uiIconPath>
+	    <costList>
+      <Steel>3</Steel>
+    </costList>
+		<researchPrerequisites>
+      <li>MeatCubes</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  
+  
+    <ThingDef ParentName="BuildingBase" Name="MoyoMeatWallBase">
+    <defName>MoyoMeatWall</defName>
+    <label>hardened moyo meat wall</label>
+    <description>A wall made of moyo meat and stones. Solid, but still disgusting.</description>
+    <category>Building</category>
+    <thingClass>Building</thingClass>
+	<designatorDropdown>MeatModWall</designatorDropdown>
+    <graphicData>
+      <texPath>Things/Building/Moyo_Meat_Wall</texPath>
+      <graphicClass>Graphic_Appearances</graphicClass>
+	        
+      <linkType>CornerFiller</linkType>
+      <linkFlags>
+        <li>Wall</li>
+        <li>Rock</li>
+      </linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop>
+        <edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft>
+        <edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+	  <color>(85,132,223)</color>
+    </graphicData>
+    <uiIconPath>Things/Building/Moyo_Meat_Wall/MeatWall_Menu_Icon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>300</WorkToBuild>
+      <Flammability>0.3</Flammability>
+    </statBases>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <holdsRoof>true</holdsRoof>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+	<designationCategory>Structure</designationCategory>
+    <building>
+      <isInert>true</isInert>
+    <blueprintGraphicData>
+      <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+    </blueprintGraphicData>
+    </building>
+    <damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>2</multiplier>
+      </li>
+    </damageMultipliers>
+    <designationHotKey>Misc3</designationHotKey>
+	<costList>
+			<MoyoMeatCube>10</MoyoMeatCube>
+
+      <Steel>3</Steel>
+    </costList>
+		<researchPrerequisites>
+      <li>MeatHardening</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  
+  
+	<TerrainDef ParentName="NaturalTerrainBase">
+		<defName>MoyoFleshfloor</defName>
+		<label>raw moyo flesh floor</label>
+		<description>Raw bloody moyo meat. Smelly, sticky, ugly, but can work as a fertilizer somehow, and plant can grow at slower speed on that thing.</description>
+		<texturePath>Things/Building/Moyo_Floors/Fleshflooring</texturePath>
+		<color>(85,132,223)</color>
+		<edgeType>FadeRough</edgeType>
+		<designatorDropdown>MeatModFloor</designatorDropdown>
+		<pathCost>10</pathCost>
+		<statBases>
+			<Beauty>-3</Beauty>
+			<WorkToBuild>150</WorkToBuild>
+		</statBases>
+		<affordances>
+			<li>Light</li>
+			<li>Medium</li>
+			<li>Heavy</li>
+			<li>Diggable</li>
+			<li>GrowSoil</li>
+		</affordances>
+		<costList>
+			<MoyoMeatCube>3</MoyoMeatCube>
+		</costList>
+		<fertility>0.7</fertility>
+		<renderPrecedence>340</renderPrecedence>
+		<designationCategory>Floors</designationCategory>
+		<constructEffect>ConstructDirt</constructEffect>
+        <generatedFilth>Filth_Dirt</generatedFilth>
+		<takeFootprints>True</takeFootprints>
+	<researchPrerequisites>
+      <li>MeatCubes</li>
+    </researchPrerequisites>
+	</TerrainDef>
+	
+	<TerrainDef ParentName="FloorBase">
+    <defName>MoyoMeatTiles</defName>
+    <label>moyo meat tiles</label>
+    <renderPrecedence>245</renderPrecedence>
+    <description>Moyo Meat Tiles in a brick pattern. Well, you just managed to make a not too bad-looking meat floor. Still sticky tho.</description>
+    <texturePath>Things/Building/Moyo_Floors/rawf</texturePath>
+	<color>(85,132,223)</color>
+	<designatorDropdown>MeatModFloor</designatorDropdown>
+    <statBases>
+      <Beauty>0</Beauty>
+      <WorkToBuild>250</WorkToBuild>
+    </statBases>
+		<costList>
+			<MoyoMeatCube>10</MoyoMeatCube>
+		</costList>
+    <constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+      <li>MeatHardening</li>
+    </researchPrerequisites>
+  </TerrainDef>
+  
+  
+  
+ <ThingDef ParentName="BedWithQualityBase">
+    <defName>MoyoMeatBed</defName>
+    <label>moyo meat bed</label>
+    <description>You don't wanna sleep in that messy and bloody thing.</description>
+	<designatorDropdown>MeatModBed</designatorDropdown>
+    <graphicData>
+      <texPath>Things/Building/Furnitures/Moyo_MeatBed/MeatBed_north</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+      <damageData>	
+        <rect>(0,0.05,1,1.95)</rect>
+      </damageData>
+	  <color>(85,132,223)</color>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>EndTable</li>
+          <li>Dresser</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Beauty>-1</Beauty>
+      <WorkToBuild>750</WorkToBuild>
+      <Mass>25</Mass>
+      <BedRestEffectiveness>0.7</BedRestEffectiveness>
+      <Comfort>0.1</Comfort>
+      <ImmunityGainSpeedFactor>0.5</ImmunityGainSpeedFactor>
+			<SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+    </statBases>
+    <size>(1,2)</size>
+	<costList>
+			<MoyoMeatCube>35</MoyoMeatCube>
+    </costList>
+    <building>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <bed_healPerDay>2</bed_healPerDay>
+    </building>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>60</pathCost>
+    <staticSunShadowHeight>0.17</staticSunShadowHeight>
+    <castEdgeShadows>True</castEdgeShadows>
+    <designationHotKey>Misc2</designationHotKey>
+    <techLevel>Medieval</techLevel>
+	<researchPrerequisites>
+      <li>MeatCubes</li>
+    </researchPrerequisites>
+    <uiIconScale>0.90</uiIconScale>
+  </ThingDef>
+  
+    <ThingDef ParentName="StandingLampBase" >
+    <defName>MoyoMeatLamp</defName>
+    <label>moyo meat lamp</label>
+    <description>Why the hell would you put a lamp into raw moyo meat ? WHY ?</description>
+	<designatorDropdown>MeatModLamp</designatorDropdown>
+	    <graphicData>
+      <texPath>Things/Building/Furnitures/Moyo_Lamp/MeatLamp</texPath>
+	  <color>(85,132,223)</color>
+    </graphicData>
+    <designationHotKey>Misc11</designationHotKey>
+	<costList>
+			<MoyoMeatCube>10</MoyoMeatCube>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>10</glowRadius>
+        <glowColor>(0,0,150,0)</glowColor>
+      </li>
+    </comps>
+		<researchPrerequisites>
+      <li>MeatCubes</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  
+  
+  <ThingDef ParentName="PlantBase">
+    <defName>MoyoMeatPlant</defName>
+    <label>moyo meat plant</label>
+    <description>This thing look like a plant, but that's more like a fungus, some kind of animal growing into fertile soil using roots. wtf ?</description>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+	  <Nutrition>0.30</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/MoyoMeatPlant2</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <selectable>true</selectable>
+    <pathCost>12</pathCost>
+    <ingestible />
+    <plant>
+			<fertilitySensitivity>1.0</fertilitySensitivity>
+			<dieIfLeafless>true</dieIfLeafless>
+			<harvestTag>Standard</harvestTag>
+			<harvestedThingDef>MoyoMeatCube</harvestedThingDef>
+			<harvestYield>10</harvestYield>
+			<sowTags>
+				<li>Ground</li>
+			</sowTags>
+			<topWindExposure>0.35</topWindExposure>
+			<growDays>15</growDays>
+      <immatureGraphicPath>Things/Plant/MoyoMeatPlant1</immatureGraphicPath>
+			<visualSizeRange>0.3~1.4</visualSizeRange>
+	  <wildOrder>2</wildOrder>
+    </plant>
+  </ThingDef>
+    </value>
+	</match>
+  </Operation>
+</Patch>

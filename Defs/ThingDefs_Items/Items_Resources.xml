@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StuffCategoryDef>
+    <defName>Meaty</defName>
+    <label>meaty</label>
+  </StuffCategoryDef> 
+
+  <ThingDef ParentName="OrganicProductBase" Name="MeatCubeBase">
+    <defName>MeatCube</defName>
+    <label>cubes of meat</label>
+    <description>Cube-carved meat to make all sort of things.</description>
+    <graphicData>
+      <texPath>Things/Items/MeatCubes</texPath>
+	  <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<thingCategories>
+      <li>MeatRaw</li>
+    </thingCategories>
+    <statBases>
+      <MarketValue>1.1</MarketValue>
+	  <Flammability>1</Flammability>
+      <DeteriorationRate>6</DeteriorationRate>
+	  <Mass>0.03</Mass>
+	  <Nutrition>0.05</Nutrition>
+    </statBases>
+    <stuffProps>
+      <stuffAdjective>meaty</stuffAdjective>
+      <categories>
+        <li>Meaty</li>
+      </categories>
+      <commonality>1.00</commonality>
+      <color>(255,0,0)</color>
+      <constructEffect>ConstructMetal</constructEffect>
+      <soundImpactStuff>BulletImpact_Wood</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Wood</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Wood</soundMeleeHitBlunt>
+      <statFactors>
+        <MaxHitPoints>0.65</MaxHitPoints>
+        <Beauty>-1</Beauty>
+        <WorkToMake>0.7</WorkToMake>
+				<WorkToBuild>0.7</WorkToBuild>
+        <DoorOpenSpeed>0.5</DoorOpenSpeed>
+      </statFactors>
+    </stuffProps>
+	<ingestible>
+      <preferability>RawBad</preferability>
+	  <foodType>Meat</foodType>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>RawVegetable_Eat</ingestSound>
+	  <tasteThought>AteRawFood</tasteThought>
+    </ingestible>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <comps>
+			<li Class="CompProperties_FoodPoisonable" />
+			<li Class="CompProperties_Ingredients" />
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>2</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="OrganicProductBase" Name="HumanMeatCubeBase">
+    <defName>HumanMeatCube</defName>
+    <label>cubes of human meat</label>
+    <description>Cube-carved human meat to make all sort of things.</description>
+    <graphicData>
+      <texPath>Things/Items/HumanMeatCubes</texPath>
+	  <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<thingCategories>
+      <li>MeatRaw</li>
+    </thingCategories>
+    <statBases>
+      <MarketValue>1.1</MarketValue>
+	  <Flammability>1</Flammability>
+      <DeteriorationRate>6</DeteriorationRate>
+	  <Mass>0.03</Mass>
+	  <Nutrition>0.05</Nutrition>
+    </statBases>
+    <stuffProps>
+      <stuffAdjective>meaty</stuffAdjective>
+      <categories>
+        <li>Meaty</li>
+      </categories>
+      <commonality>1.00</commonality>
+      <color>(255,0,0)</color>
+      <constructEffect>ConstructMetal</constructEffect>
+      <soundImpactStuff>BulletImpact_Wood</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Wood</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Wood</soundMeleeHitBlunt>
+      <statFactors>
+        <MaxHitPoints>0.65</MaxHitPoints>
+        <Beauty>-1</Beauty>
+        <WorkToMake>0.7</WorkToMake>
+				<WorkToBuild>0.7</WorkToBuild>
+        <DoorOpenSpeed>0.5</DoorOpenSpeed>
+      </statFactors>
+    </stuffProps>
+	<ingestible>
+      <preferability>RawBad</preferability>
+	  <foodType>Meat</foodType>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>RawVegetable_Eat</ingestSound>
+	  <tasteThought>AteHumanlikeMeatDirect</tasteThought>
+    </ingestible>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <comps>
+			<li Class="CompProperties_FoodPoisonable" />
+			<li Class="CompProperties_Ingredients" />
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>2</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+    </comps>
+  </ThingDef>
+
+</Defs>
